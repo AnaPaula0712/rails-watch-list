@@ -1,13 +1,26 @@
-<div>
+<div class="container-bg">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://englishlive.ef.com/pt-br/blog/wp-content/uploads/sites/16/2019/05/Frases-do-cinema-para-ampliar-o-vocabul%C3%A1rio.jpg);">
+    <div class="container">
+      <h1><strong>Adicione um novo filme favorito à sua lista!</strong></h1>
+      <h1>
+        <span id='title-typed-text' mb-3></span>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="container-list mt-3">
   <div>
     <%= simple_form_for [@list, @bookmark] do |f| %>
-      <%= f.input :comment %>
-      <%= f.association :movie %>
-      <%= f.submit 'Criar um bookmark' %>
+      <h2><%= f.input :comment %></h2>
+      <h2><%= f.association :movie %></h2>
+      <div class="form-actions">
+        <%= f.submit 'Criar um favorito', class: "btn btn-outline-secondary" %>
+      </div>
     <% end %>
   </div>
 
-  <div>
-    <%= link_to 'Voltar', list_path(@list), class: "btn btn-outline-secondary" %>
+  <div class="form-actions">
+    <%= link_to 'Voltar', list_path(@list), class: "btn btn-outline-secondary mt-3" %>
   </div>
 </div>

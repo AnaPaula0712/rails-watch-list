@@ -2,3 +2,18 @@
   display: inline;
   justify-content: center;
 }
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#fbd916, #f7e70bf5);
+  transition: background 0.3s ease;
+  border: 1px solid #fbd916;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#fbd916, #e7eb11);
+  color: white;
+}
