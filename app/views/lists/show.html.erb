@@ -1,0 +1,38 @@
+<div class="container-bg">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://englishlive.ef.com/pt-br/blog/wp-content/uploads/sites/16/2019/05/Frases-do-cinema-para-ampliar-o-vocabul%C3%A1rio.jpg);">
+    <div class="container">
+      <h1><strong><%= @list.name %></strong></h1>
+      <h1>
+        <span id='title-typed-text' mb-3></span>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="container-list">
+  <div class="title mt-3">
+  <h1><strong>Favoritos</strong></h1>
+  </div>
+
+  <div>
+    <%= link_to 'Adicionar um novo favorito', new_list_bookmark_path(@list), class: "btn btn-outline-secondary mb-5" %>
+  </div>
+
+  <div>
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card mb-3">
+        <p><%= bookmark.comment %>
+        <%= image_tag(bookmark.movie.poster_url, size: '120x200') %>
+        <%= link_to 'Excluir', bookmark_path(bookmark),
+          method: :delete,
+          data: {confirm: 'Você tem certeza que deseja excluir esse favorito?'},
+          class: 'btn btn-danger btn-sm' %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="back">
+    <%= link_to 'Voltar', lists_path, class: "btn btn-outline-secondary" %>
+  <div>
+
+</div>

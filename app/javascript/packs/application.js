@@ -12,3 +12,13 @@ import 'bootstrap'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import { loadDynamicBannerText } from '../components/banner'
+import { loadDynamicListTitle } from '../components/title'
+
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText()
+});
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicListTitle()
+});

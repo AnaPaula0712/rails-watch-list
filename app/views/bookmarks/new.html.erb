@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie %>
+      <%= f.submit 'Criar um bookmark' %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to 'Voltar', list_path(@list), class: "btn btn-outline-secondary" %>
+  </div>
+</div>

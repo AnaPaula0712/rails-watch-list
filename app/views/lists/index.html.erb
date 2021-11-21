@@ -1,13 +1,24 @@
 <div class="container-bg">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://4.bp.blogspot.com/-n1qgamr4hH8/TYIKm0gcDRI/AAAAAAAAAaw/H49OewR-o_8/s1600/George%2BMeli%25C3%25A8s1.jpg);">
   <div class="container">
-    <h1 class='text-left'>Lists</h1>
-    <%= link_to 'Add a new List', new_list_path, class: 'btn btn-sm btn-success mb-5' %>
-    <% @lists.each do |list| %>
-      <%= link_to list_path(list), class: 'text-decoration-none text-success' do %>
-        <div class="card text-white bg-success mb-3">
-          <h2><%= list.name %></h2>
-        </div>
-      <% end %>
-    <% end %>
+    <h1>
+      <span id='banner-typed-text'></span>
+    </h1>
+    <p>Crie sua própria lista de filmes e divirta-se!</p>
   </div>
+  </div>
+</div>
+
+<div class="container-list">
+  <tbody>
+    <% @lists.each do |list| %>
+      <div class="card-product">
+        <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1456&q=80" />
+        <div class="card-product-infos">
+          <h2><%= list.name %></h2>
+          <%= link_to 'Conheça essa lista!', list_path(list), class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </tbody>
 </div>
